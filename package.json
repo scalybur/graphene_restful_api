@@ -4,6 +4,9 @@
   "description": "service project",
   "main": "/index.ts",
   "scripts": {
+    "start": "node bin/index.js",
+    "dev": "nodemon index",
+    "clean": "rimraf bin/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,5 +36,12 @@
     "memory-cache": "^0.2.0",
     "mongoose": "^6.0.12",
     "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jest": "^27.3.1",
+    "mockingoose": "^2.15.2",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2"
   }
 }
