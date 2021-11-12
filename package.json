@@ -2,11 +2,12 @@
   "name": "graphene_restful_api",
   "version": "1.0.0",
   "description": "service project",
-  "main": "/index.ts",
+  "main": "index.js",
   "scripts": {
     "start": "node bin/index.js",
-    "dev": "nodemon index",
+    "dev": "nodemon bin/index.js",
     "build": "tsc",
+    "lint": "eslint",
     "clean": "rimraf bin/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -2,6 +2,11 @@ import express from 'express'
 import { Graphene } from './src/models/graphene'
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false })) // TODO
+
+
+
 app.get('/', (req, res, next)=>{
     let graphs = []
 

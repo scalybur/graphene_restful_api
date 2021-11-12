@@ -2,27 +2,49 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "tsc: watch - tsconfig.json",
+			"label": "tsc",
 			"type": "typescript",
 			"tsconfig": "tsconfig.json",
 			"option": "watch",
 			"problemMatcher": [
 				"$tsc-watch"
 			],
+			"presentation": {
+                "reveal": "always",
+				"echo": false
+            },
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
 		},
 		{
-			"group": {
-				"kind": "test",
-			},
+			// "group": {
+			// 	"kind": "test"
+			// },
+			"label": "clean",
 			"type": "npm",
 			"script": "clean",
-			"problemMatcher": [],
-			"label": "npm: clean",
+			// "problemMatcher": ["$tslint5"],
+			"presentation": {
+                "reveal": "always",
+				"echo": false
+            },
 			"detail": "rimraf bin/"
-		}
+		},
+		// {
+		// 	"args": [
+		// 		"hello"
+		// 	],
+		// 	"command": "echo",
+		// 	"presentation": {
+		// 		"echo": true,
+		// 		"focus": true,
+		// 		"panel": "new",
+		// 		"reveal": "always"
+		// 	},
+		// 	"problemMatcher": [],
+		// 	"type": "process"
+		// }
 	]
 }

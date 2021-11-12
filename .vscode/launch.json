@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run builder debugger",
+            "name": "run builder debugger",
             "type": "pwa-node",
             "request": "launch",
             "console": "integratedTerminal",
@@ -10,16 +10,17 @@
             // "args": [
             //     "--verbose"
             // ],
-            "postDebugTask": "npm: clean",
-            "preLaunchTask": "npm: build",
+            "preLaunchTask": "tsc",
+            "postDebugTask": "clean",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "resolveSourceMapLocations": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/bin/**",
                 "!**/node_modules/**"
             ],
-            // "program": "${workspaceFolder}\\index.ts"
+            "program": "${workspaceFolder}\\bin\\"
         }
     ]
 }
