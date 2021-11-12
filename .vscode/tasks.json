@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "tsc: watch - tsconfig.json",
+			"type": "typescript",
+			"tsconfig": "tsconfig.json",
+			"option": "watch",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		},
+		{
+			"group": {
+				"kind": "test",
+			},
+			"type": "npm",
+			"script": "clean",
+			"problemMatcher": [],
+			"label": "npm: clean",
+			"detail": "rimraf bin/"
+		}
+	]
+}
