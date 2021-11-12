@@ -27,7 +27,7 @@
 			"script": "clean",
 			// "problemMatcher": ["$tslint5"],
 			"presentation": {
-                "reveal": "always",
+                "reveal": "silent",
 				"echo": false
             },
 			"detail": "rimraf bin/"

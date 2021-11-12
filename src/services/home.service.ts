@@ -1,0 +1,5 @@
+class HomeService {
+
+}
+
+export = HomeService

@@ -1,6 +1,7 @@
 import express from 'express'
-import { Graphene } from './src/models/graphene'
+import { Graphene, IGraphene } from './src/models'
 const app = express()
+const { PORT } = require('./src/config')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false })) // TODO
@@ -8,7 +9,7 @@ app.use(express.urlencoded({ extended: false })) // TODO
 
 
 app.get('/', (req, res, next)=>{
-    let graphs = []
+    let graphs: IGraphene[] = []
 
     for (let u = 0; u < 1000; u++){
         graphs.push(new Graphene(`Graphene material ${u}`))
@@ -17,4 +18,4 @@ app.get('/', (req, res, next)=>{
     res.status(200).send(graphs)
 })
 
-app.listen(4000, ()=> console.log('Running')).on('error', console.log)
+app.listen(PORT, ()=> console.log('Running at port: ' + PORT)).on('error', console.log)
