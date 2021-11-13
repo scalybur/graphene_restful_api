@@ -6,8 +6,6 @@ const { PORT } = require('./src/config')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false })) // TODO
 
-
-
 app.get('/', (req, res, next)=>{
     let graphs: IGraphene[] = []
 

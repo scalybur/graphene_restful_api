@@ -2,6 +2,10 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "build-all",
+			"dependsOn": ["tsc", "lint"]
+		},
+		{
 			"label": "tsc",
 			"type": "typescript",
 			"tsconfig": "tsconfig.json",
@@ -19,6 +23,23 @@
 			},
 		},
 		{
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "lint",
+			"type": "npm",
+			"script": "lint",
+			// "problemMatcher": ["$tslint5"],
+			"presentation": {
+                "reveal": "silent",
+				"echo": false
+            },
+			// "group": "build",
+			"detail": "tslint"
+		},
+		{
+			"group": "test",
 			// "group": {
 			// 	"kind": "test"
 			// },

@@ -10,7 +10,7 @@
             // "args": [
             //     "--verbose"
             // ],
-            "preLaunchTask": "tsc",
+            "preLaunchTask": "build-all",
             "postDebugTask": "clean",
             "skipFiles": [
                 "<node_internals>/**"
