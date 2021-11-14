@@ -1,19 +1,13 @@
-import express from 'express'
-import { Graphene, IGraphene } from './src/models'
-const app = express()
-const { PORT } = require('./src/config')
+import { container } from './src/containers'
+import mongoose from 'mongoose'
+const server = container.resolve('server')
+const { MONGO_URI } = container.resolve('configuration')
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false })) // TODO
-
-app.get('/', (req, res, next)=>{
-    let graphs: IGraphene[] = []
-
-    for (let u = 0; u < 1000; u++){
-        graphs.push(new Graphene(`Graphene material ${u}`))
-    }
-
-    res.status(200).send(graphs)
-})
-
-app.listen(PORT, ()=> console.log('Running at port: ' + PORT)).on('error', console.log)
+mongoose
+    .connect(MONGO_URI)
+    .then(()=> server.start())
+    .catch((e: Error)=>{
+        // eslint-disable-next-line no-console
+        console.error(e.message)
+        process.exit(0)
+    })

@@ -1,3 +1,10 @@
-import express from 'express'
+import { Router } from 'express'
 import { HomeController } from '../controllers'
-export const HomeRoutes = express.Router()
+
+export function homeRoutes(homeController: HomeController): Router {
+    const router = Router()
+    router.get('/', homeController.index)
+
+
+    return router
+}

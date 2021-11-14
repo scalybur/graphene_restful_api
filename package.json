@@ -7,7 +7,7 @@
     "start": "node bin/index.js",
     "dev": "nodemon bin/index.js",
     "build": "tsc",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .js,.ts",
     "clean": "rimraf bin/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

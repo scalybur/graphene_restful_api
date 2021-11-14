@@ -1,5 +1,5 @@
-class HomeService {
-
+export class HomeService {
+    index(){
+        return { message:'Hello' }
+    }
 }
-
-export = HomeService

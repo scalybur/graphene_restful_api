@@ -1,5 +1,1 @@
-
-
-export = {
-    HomeService: require("./home.service")
-}
+export { HomeService } from './home.service'

@@ -1,6 +1,6 @@
 
 export class Graphene implements IGraphene{
-    description: string = ""
+    description = ""
     constructor(description: string){
         this.description = description
     }

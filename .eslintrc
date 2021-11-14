@@ -1,43 +1,38 @@
 {
   // "defaultSeverity": "",
-  "extends": ["eslint:recommended", "prettier"],
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   // "linterOptions": {
   //   "exclude": ["node_modules/**/*"],
   //   "ordered-imports": false
   // },
   // "jsRules": {},
-  "rules": {
-    "no-unused-expression": 1,
-    "no-duplicate-variable": 1,
-    "no-unused-variable": 2,
-    "curly": 2,
-    "class-name": 1,
-    "no-console": 2,
-    "semicolon": 2,
-    "triple-equals": 1
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "tsconfigRootDir": "./",
+    "project": "tsconfig.json"
   },
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "no-irregular-whitespace": 2,
+    // "no-unused-expression": 1,
+    // "no-duplicate-variable": 1,
+    // "no-unused-variable": 2,
+    // "curly": 1,
+    // "class-name": 1,
+    "no-console": 2,
+    "semicolon": 0
+    // "triple-equals": 1
+  }
   // "rulesDirectory": []
-
 }
-
-
-// {
-//   "defaultSeverity": "error",
-//   "extends": ["tslint:recommended"],
-//   "linterOptions": {
-//     "exclude": ["node_modules/**/*"],
-//     "ordered-imports": false
-//   },
-//   "jsRules": {},
-//   "rules": {
-//     "no-unused-expression": true,
-//     "no-duplicate-variable": true,
-//     "no-unused-variable": true,
-//     "curly": true,
-//     "class-name": true,
-//     "semicolon": false,
-//     "triple-equals": true
-//   },
-//   "rulesDirectory": []
-
-// }

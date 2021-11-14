@@ -1,1 +1,1 @@
-export * from './home.controller'
+export { HomeController } from "./home.controller"
