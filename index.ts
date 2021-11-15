@@ -1,4 +1,4 @@
-import { container } from './src/containers'
+import container from './src/containers/container'
 import mongoose from 'mongoose'
 const server = container.resolve('server')
 const { MONGO_URI } = container.resolve('configuration')

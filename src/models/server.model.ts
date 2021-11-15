@@ -6,10 +6,10 @@ let _router: Router
 export class Server {
     public app: Express
 
-    constructor(private readonly configuration: any, private readonly router: Router){
+    constructor(args: { readonly configuration: any, readonly router: Router}){
         this.app = express()
-        _configuration = configuration
-        _router = router
+        _configuration = args.configuration
+        _router = args.router
 
         this.app.use(_router)
     }
@@ -19,6 +19,7 @@ export class Server {
             this.app.listen(_configuration.PORT, ()=>{
                 // eslint-disable-next-line no-console
                 console.log(`Graphene API running on port: ${_configuration.PORT}`)
+                resolve(this)
             })
         })
     }

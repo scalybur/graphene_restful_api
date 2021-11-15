@@ -3,9 +3,9 @@ import * as Configuration from '../config'
 import { HomeService } from '../services'
 import { HomeController } from '../controllers'
 import { routes, homeRoutes } from '../routes'
-import { Server } from '../models'
+import { Server, User, Comment, Idea } from '../models'
 
-export const container: AwilixContainer = createContainer()
+const container: AwilixContainer = createContainer()
 
 container
 .register({
@@ -22,3 +22,10 @@ container
 .register({
     homeRoutes: asFunction(homeRoutes).singleton(),
 })
+.register({
+    User: asValue(User),
+    Idea: asValue(Idea),
+    Comment: asValue(Comment),
+})
+
+export default container

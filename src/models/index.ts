@@ -1,2 +1,6 @@
 export { Server } from './server.model'
 export { Graphene, IGraphene } from './graphene.model'
+export { User } from './user.model'
+export { Idea } from './idea.model'
+export { Comment } from './comment.model'
+// export { User } from './user.model'
