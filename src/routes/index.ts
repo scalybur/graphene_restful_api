@@ -6,9 +6,10 @@ import compression from 'compression'
 import helmet from 'helmet'
 import { notFoundMiddleware } from '../middlewares/not-found.middleware'
 import { errorMiddleware } from '../middlewares/error.middleware'
+import { IMainContainer } from '../containers/main.container'
 require('express-async-errors')
 
-export function routes(homeRoutes: Router){
+export function routes({ homeRoutes } : IMainContainer){
     const router = express.Router()
     const apiRoutes = express.Router()
 

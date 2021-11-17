@@ -1,15 +1,17 @@
 import express, { Express, Router } from 'express'
+import { IConfiguration } from '../config'
+import { IMainContainer } from '../containers/main.container'
 
-let _configuration: any
+let _configuration: IConfiguration
 let _router: Router
 
 export class Server {
     public app: Express
 
-    constructor(args: { readonly configuration: any, readonly router: Router}){
+    constructor({ configuration, routes } : IMainContainer){
         this.app = express()
-        _configuration = args.configuration
-        _router = args.router
+        _configuration = configuration
+        _router = routes
 
         this.app.use(_router)
     }

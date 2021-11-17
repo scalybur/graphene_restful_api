@@ -1,7 +1,18 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Model, Schema } from 'mongoose'
 import autopopulate from 'mongoose-autopopulate'
 
-const IdeaSchema = new Schema({
+export interface IIdea {
+    idea: string
+    description: string
+    upVotes: boolean
+    downVotes: boolean
+    author: Schema.Types.ObjectId
+    comments: Schema.Types.ObjectId[]
+}
+
+export type IIdeaModel = Model<IIdea>
+
+const IdeaSchema = new Schema<IIdea>({
     idea: { type: String, required: true },
     description: { type: String },
     upVotes: [{ type: Boolean }],

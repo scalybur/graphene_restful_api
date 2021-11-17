@@ -4,7 +4,16 @@ if (process.env.NODE_ENV !== "production"){
     dotenv.config()
 }
 
-export const PORT = process.env.PORT
-export const MONGO_URI = process.env.MONGO_URI
-export const APPLICATION_NAME = process.env.APPLICATION_NAME
-export const APPLICATION_SECRET = process.env.APPLICATION_SECRET || "BROKEN"
+export interface IConfiguration {
+    PORT: number
+    MONGO_URI: string
+    APPLICATION_NAME: string
+    APPLICATION_SECRET: string
+}
+
+export const configuration: IConfiguration = {
+    PORT : Number(process.env.PORT) || 4000,
+    MONGO_URI : process.env.MONGO_URI || '',
+    APPLICATION_NAME : process.env.APPLICATION_NAME || 'GrapheneApi',
+    APPLICATION_SECRET : process.env.APPLICATION_SECRET || "BROKEN",
+}

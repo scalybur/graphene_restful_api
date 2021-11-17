@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { HomeController } from '../controllers'
+import { IMainContainer } from '../containers/main.container'
 
-export function homeRoutes(homeController: HomeController): Router {
+export function homeRoutes({ HomeController } : IMainContainer) {
     const router = Router()
-    router.get('/', homeController.index)
+    router.get('/', HomeController.index)
 
 
     return router

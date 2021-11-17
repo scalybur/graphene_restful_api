@@ -1,3 +1,4 @@
+import { Model } from "mongoose"
 
 export class Graphene implements IGraphene{
     description = ""
@@ -9,3 +10,5 @@ export class Graphene implements IGraphene{
 export interface IGraphene {
     description: string
 }
+
+export type IGrapheneModel = Model<IGraphene>

@@ -1,5 +1,14 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Model, Schema } from 'mongoose'
 import { compareSync, hashSync, genSaltSync } from 'bcryptjs'
+
+export interface IUser {
+    name: string
+    username: string
+    password: string
+    mail: string
+}
+
+export type IUserModel = Model<IUser>
 
 const UserSchema  = new Schema({
     name: { type: String, required: true },

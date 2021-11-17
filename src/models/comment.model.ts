@@ -1,7 +1,15 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Model, ObjectId, Schema } from 'mongoose'
 import autopopulate from 'mongoose-autopopulate'
 
-const CommentSchema = new Schema({
+export interface IComment {
+    comment: string
+    description: string
+    author: Schema.Types.ObjectId
+}
+
+export type ICommentModel = Model<IComment>
+
+const CommentSchema = new Schema<IComment>({
     comment: { type: String, required: true },
     description: { type: String },
     author: { type: Schema.Types.ObjectId, ref: "User", required: true, autopopulate: true }
