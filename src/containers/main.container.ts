@@ -23,6 +23,7 @@ export interface IMainContainer {
     Comment: ICommentModel
     homeRoutes: Router
     HomeController: HomeController
+    HomeService: HomeService
 }
 
 container

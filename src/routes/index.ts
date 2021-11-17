@@ -22,7 +22,7 @@ export function routes({ homeRoutes } : IMainContainer){
 
     apiRoutes.use('/home', homeRoutes)
 
-    router.use('v1/api', apiRoutes)
+    router.use('/v1/api', apiRoutes)
     router.use(notFoundMiddleware)
     router.use(errorMiddleware)
 

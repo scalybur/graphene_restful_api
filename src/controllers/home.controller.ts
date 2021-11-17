@@ -1,9 +1,10 @@
 import { HomeService } from "../services"
 import { Request, Response, NextFunction } from "express"
+import { IMainContainer } from "../containers/main.container"
 
 let _homeService: HomeService
 export class HomeController implements IHomeController {
-    constructor( HomeService : HomeService) {
+    constructor({ HomeService : HomeService } : IMainContainer) {
         _homeService = HomeService
     }
 
